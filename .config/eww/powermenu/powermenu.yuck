@@ -1,0 +1,51 @@
+(defpoll time :interval "5s"
+  "date +%H:%M")
+
+(defwindow powermenu 
+    :monitor 0 ;; Optional for X11
+    :stacking "fg"
+    :windowtype "normal"
+    :wm-ignore true
+    :geometry (geometry :width "60%"
+                        :height "60%"
+                        :anchor "center")
+  (powermenu_layout))
+
+(defwidget powermenu_layout []
+  (box :class "layout-box"
+       :space-evenly false
+       :orientation "v"
+       :halign "fill"
+       :hexpand true
+    (box :hexpand true
+         :halign "end"
+      (button :onclick "eww close powermenu" 
+              :class "close-btn" 
+        "⛌"))
+    (box :class "tm-box"
+         :space-evenly false
+         :valign "center"
+         :vexpand true
+         :halign "center"
+      (label :text " ${time}"))
+    (_buttons :shutdown "poweroff" :shutdown_icon " "
+              :reboot "reboot" :reboot_icon "↺"
+              :logout "loginctl kill-session self" :logout_icon "󰍃 "))) 
+
+(defwidget _buttons [shutdown shutdown_icon reboot 
+                     reboot_icon logout logout_icon]
+  (box :class "btns-box"
+       :spacing 10
+       :valign "end"
+       :halign "center"
+       :space-evenly true
+    (_button_aligned :cmd shutdown "${shutdown_icon} Shutdown")
+    (_button_aligned :cmd reboot "${reboot_icon} Reboot")
+    (_button_aligned :cmd logout "${logout_icon} Logout")))
+
+(defwidget _button_aligned [cmd]
+  (button :valign "center"
+          :vexpand true
+          :onclick cmd
+          (children)))
+   

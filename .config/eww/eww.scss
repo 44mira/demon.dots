@@ -1,0 +1,65 @@
+$surface-darkgrey: #20252b;
+$surface-fg: #BBBBBB;
+$surface-lightgrey: #3d464e;
+$surface-grey: #2b3238;
+$surface-red: #f87070;
+
+* {
+  all: unset;
+  font-family: "CommitMono Nerd Font";
+}
+
+.layout-box {
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 2px solid $surface-red;
+  padding: 2em 5em 5em 5em;
+  color: rgba($surface-fg, 1.0);
+  background-image: url('/home/mira/Pictures/pandemonica.png');
+}
+
+.tm-box {
+  background-color: rgba($surface-darkgrey, 0.9);
+  padding: 5em;
+  border-radius: 1em;
+
+  label {
+    font-size: 14em;
+  }
+}
+
+.close-btn {
+  font-size: 2em;
+  &:hover {
+    color: $surface-red;
+  }
+}
+
+.btns-box {
+  font-size: 2.5em;
+
+  button {
+    padding: 0.4em;
+    border-radius: 0.1em;
+    background-color: rgba($surface-darkgrey, 0.9);
+
+    &:hover {
+      transition: 200ms linear background-color, border-radius;
+      background-color: rgba($surface-lightgrey, 1);
+    }
+
+    &:first-child {
+      color: rgba($surface-red, 0.8);
+    }
+  }
+}
+
+.sep {
+  font-size: 1em;
+  padding-top: 0.15em;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
+  font-weight: 400;
+}
+
+// vim:ft=scss
