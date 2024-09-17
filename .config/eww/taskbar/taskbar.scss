@@ -1,0 +1,33 @@
+
+.workspaces {
+  button {
+    border-radius: 9999px;
+    padding: 0em 0.5em;
+    min-width: 1.5rem;
+
+    background-color: rgba($surface-darkgrey, 0.9);
+
+    &:hover {
+      transition: 200ms linear background-color, border-radius;
+      background-color: rgba($surface-lightgrey, 1);
+    }
+  }
+}
+
+.side-info, .window_title {
+  background-color: rgba($surface-darkgrey, 0.9);
+  padding: 0em 1em;
+  border-radius: 9999px;
+  color: #BBBBBB;
+
+}
+
+.side-info {
+  min-width: 60px;
+}
+
+.battery {
+  all: unset;
+  min-width: 20px;
+  min-height: 30px;
+}

@@ -1,0 +1,48 @@
+
+
+.layout-box {
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 2px solid $surface-red;
+  padding: 2em 5em 5em 5em;
+  color: rgba($surface-fg, 1.0);
+  background-image: url('/home/mira/Pictures/pandemonica.png');
+}
+
+.tm-box {
+  background-color: rgba($surface-darkgrey, 0.9);
+  padding: 5em;
+  border-radius: 1em;
+
+  label {
+    font-size: 8em;
+  }
+}
+
+.close-btn {
+  font-size: 2em;
+  &:hover {
+    color: $surface-red;
+  }
+}
+
+.btns-box {
+  font-size: 2.5em;
+
+  button {
+    padding: 0.4em;
+    border-radius: 0.1em;
+    background-color: rgba($surface-darkgrey, 0.9);
+
+    &:hover {
+      transition: 200ms linear background-color, border-radius;
+      background-color: rgba($surface-lightgrey, 1);
+    }
+
+    &:first-child {
+      color: rgba($surface-red, 0.8);
+    }
+  }
+}
+
+// vim:ft=scss
