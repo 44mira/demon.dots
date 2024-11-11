@@ -6,7 +6,7 @@ return {
   cmd = 'Silicon',
   opts = {
     font = 'FantasqueSansM Nerd Font=20',
-    theme = '1337',
+    theme = 'Sublime Snazzy',
     background = '#3c3163',
     -- background_image = '/home/tyrael/Pictures/wallpaper.png',
     line_offset = function(args)
@@ -17,7 +17,7 @@ return {
     line_pad = 1,
     no_window_controls = true,
     to_clipboard = true,
-    no_line_number = true,
+    no_line_number = false,
     no_round_corner = true,
     shadow_color = '#000000',
     window_title = function()

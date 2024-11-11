@@ -13,6 +13,9 @@ local bind = vim.keymap.set
 -- Open an Oil buffer
 bind('n', '<leader>f', '<cmd>Oil<CR>', { desc = 'Open [F]ile explorer buffer' })
 
+--  Open tree
+bind('n', '<leader>v', '<cmd>Neotree right reveal toggle<CR>', { desc = '[V]iew file tree' })
+
 -- Toggle lines for indented
 bind('n', '<leader>i', '<cmd>IBLEnable | set cc=80<CR>', { desc = 'Enable Indent Blank Line' })
 bind('n', '<leader>j', '<cmd>IBLDisable | set cc=0<CR>', { desc = 'Disable Indent Blank Line' })
@@ -110,7 +113,6 @@ local servers = {
     cmd = { '/home/tyrael/.asdf/installs/elixir/elixir-ls/language_server.sh' },
   },
   pyright = {},
-  ts_ls = {},
   lua_ls = {
     -- cmd = {...},
     -- filetypes { ...},
@@ -336,8 +338,8 @@ require('lazy').setup {
         -- },
         pickers = {
           find_files = {
-            hidden = true,
-            no_ignore = true,
+            -- hidden = true,
+            -- no_ignore = true,
             follow = true,
           },
         },
@@ -496,6 +498,7 @@ require('lazy').setup {
         typescriptreact = { 'prettierd', 'prettier' },
         astro = { 'prettierd', 'prettier' },
         json = { 'prettierd', 'prettier' },
+        jsonc = { 'prettierd', 'prettier' },
         html = { 'prettierd', 'prettier' },
         bash = { 'shfmt' },
         xml = { 'xmlformatter' },
@@ -618,7 +621,7 @@ require('lazy').setup {
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
-        indent = { enable = true },
+        indent = { enable = true, disable = { 'ruby' } },
       }
 
       -- There are additional nvim-treesitter modules that you can use to interact
@@ -632,6 +635,7 @@ require('lazy').setup {
   -- highlighting for kitty config
   'fladson/vim-kitty',
   { import = 'custom.plugins' },
+  { import = 'custom.dap' },
 }
 
 -- }}}

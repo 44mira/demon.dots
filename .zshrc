@@ -65,16 +65,12 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export MANROFFOPT="-c"
 
 alias nv="nvim"
+alias py="python"
 alias btop="btop -t"
 alias ls="exa"
 alias ll="exa -s type -la"
 alias ff="fastfetch"
 alias lg="lazygit"
-alias bat="bat -P"
-
-eval "$(zoxide init zsh)"
-eval "$(fzf --zsh)"
-eval "$(oh-my-posh init zsh --config ~/.thm.omp.json)"
 
 # erlang and elixir
 . /opt/asdf-vm/asdf.sh
@@ -83,3 +79,12 @@ eval "$(oh-my-posh init zsh --config ~/.thm.omp.json)"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+eval "$(rbenv init - zsh)"
+
+path+=("${HOME}/.local/share/gem/ruby/3.3.0/bin")
+path+=("${HOME}/.local/bin")
+export PATH
+
+eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"

@@ -61,7 +61,8 @@ FOOTERS = {
 DIRECTORIES = {
   [[~/.config/nvim]],
   [[~/.config/kitty]],
-  [[~/.config/awesome]],
+  [[~/.config/hypr]],
+  [[~/.config/ags]],
   [[~/.config]],
 }
 

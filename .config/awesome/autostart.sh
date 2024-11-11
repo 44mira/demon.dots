@@ -7,6 +7,9 @@ run() {
 }
 
 run picom
-run eww daemon
 run nm-applet
+
+run eww daemon
+eww open taskbar
+
 

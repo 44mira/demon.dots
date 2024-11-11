@@ -49,8 +49,6 @@
            :spacing 4
         (taskbar_systray)
         (taskbar_battery))))
-      
-   
 
 (defwidget taskbar_ram []
   (label 

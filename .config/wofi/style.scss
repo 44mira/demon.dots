@@ -1,0 +1,78 @@
+// helltaker
+/* $primary: #ab343f; */
+/* $secondary: #b23e3e; */
+/* $accent: #e8e8eb; */
+/* $bgLight: #3b3a4e; */
+/* $bgDark: #231e2b; */
+/* $text: #f6e7d8; */
+
+// nightsky
+/* $primary: #82aac3; */
+/* $secondary: #eb836a; */
+/* $accent: #eb836a; */
+/* $bgLight: #4a4b69; */
+/* $bgDark: #201a24; */
+/* $text: #f6edb6; */
+
+// rainyday
+$primary: #4B5CA3;
+$secondary: #20362A;
+$accent: #e97c63;
+$bgLight: #25403F;
+$bgDark: #101920;
+$text: #f6edb6;
+
+@mixin taskbar_style($radius: 0.75em) {
+  background-color: $bgDark;
+  border: 1px solid $bgLight;
+  border-radius: $radius;
+}
+
+@mixin drop_shadow() {
+  box-shadow: 0px 10px 5px 6px rgba(black, 0.3);
+}
+
+window {
+  color: $text;
+  font-size: 24px;
+  background-color: rgba($bgDark, 0.5);
+  border: 2px solid $bgLight;
+  border-radius: 1em;
+}
+
+#input {
+  @include taskbar_style(0.5em);
+  @include drop_shadow();
+  color: $accent;
+  margin-bottom: 1em;
+  padding: 0.25em;
+}
+
+
+#outer-box {
+  padding: 1em;
+}
+
+#scroll {
+  @include taskbar_style();
+  @include drop_shadow();
+  border-radius: 0.75em;
+
+  #inner-box {
+    padding: 1em;
+
+    #entry:selected {
+      box-shadow: 0px 0px 5px 5px rgba($primary, 0.8);
+      background-color: rgba($bgLight, 0.9);
+      border-radius: 0.7em;
+      border-bottom: 2px dotted $accent;
+      color: $accent;
+    }
+  }
+}
+
+#text {
+  padding-left: 0.5em;
+}
+
+

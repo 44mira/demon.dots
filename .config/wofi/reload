@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# mkdir -p style.css
+
+sassc style.scss style.css
