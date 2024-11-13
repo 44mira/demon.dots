@@ -88,3 +88,4 @@ export PATH
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
+eval "$(starship init zsh)"
