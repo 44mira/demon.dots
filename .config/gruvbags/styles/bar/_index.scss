@@ -1,0 +1,13 @@
+@use "../colors" as *;
+@use "workspace";
+
+centerbox.bar {
+  background-color: $bg-0;
+  border-bottom: 2px solid $bg-dim;
+  min-height: 50px;
+  padding: 10px 14px;
+}
+
+label.power {
+  color: $fg-0;
+}

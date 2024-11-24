@@ -66,7 +66,6 @@ export MANROFFOPT="-c"
 
 alias nv="nvim"
 alias py="python"
-alias btop="btop -t"
 alias ls="exa"
 alias ll="exa -s type -la"
 alias ff="fastfetch"
@@ -89,3 +88,4 @@ export PATH
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+source /usr/share/nvm/init-nvm.sh

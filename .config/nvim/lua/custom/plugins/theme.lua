@@ -102,7 +102,7 @@ local nordic = {
 return {
   -- catppuccin,
   -- tokyonight,
-  rosepine,
-  -- gruvbox_material,
+  -- rosepine,
+  gruvbox_material,
   -- nordic,
 }

@@ -1,0 +1,17 @@
+@use '../colors' as *;
+
+$side: 25px;
+
+button.workspace {
+  min-width: $side;
+  min-height: $side;
+  border: 4px solid $fg-0;
+
+  transition-property: min-width;
+  transition-duration: 0.1s;
+
+  &.active {
+    min-width: $side * 2.5;
+    background-color: $fg-0;
+  }
+}

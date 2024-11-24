@@ -338,9 +338,10 @@ require('lazy').setup {
         -- },
         pickers = {
           find_files = {
-            -- hidden = true,
+            hidden = true,
             -- no_ignore = true,
             follow = true,
+            file_ignore_patterns = { '.git/', '.cache', '%.o', '%.a', '%.out', '%.class', '%.pdf', '%.mkv', '%.mp4', '%.zip' },
           },
         },
         extensions = {
@@ -488,6 +489,12 @@ require('lazy').setup {
         end
         return { timeout_ms = 500, lsp_fallback = true }
       end,
+      formatters = {
+        black = {
+          command = 'black',
+          args = { '--line-length=79' },
+        },
+      },
       formatters_by_ft = {
         lua = { 'stylua' },
         python = { 'black' },

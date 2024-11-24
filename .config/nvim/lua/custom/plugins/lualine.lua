@@ -25,6 +25,14 @@ local copilot = {
   show_colors = true,
 }
 
+local function trunc(str)
+  if #str < 25 then
+    return str
+  end
+
+  return str:sub(1, 25) .. '...'
+end
+
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons', 'AndreM222/copilot-lualine' },
@@ -43,7 +51,10 @@ return {
       },
     },
     sections = {
-      lualine_b = { 'branch' },
+      lualine_b = { {
+        'branch',
+        fmt = trunc,
+      } },
       lualine_c = { 'filename' },
       lualine_x = { 'diff', copilot, 'diagnostics' },
       lualine_y = { 'filetype' },
