@@ -4,7 +4,7 @@
 ags quit
 
 # rainyday
-ags run &
+# ags run &
 
 # gruvbags
-# ags run -d ~/.config/gruvbags/ &
+ags run -d ~/.config/gruvbags/ &
