@@ -15,12 +15,20 @@
 /* $text: #f6edb6; */
 
 // rainyday
-$primary: #4B5CA3;
-$secondary: #20362A;
-$accent: #e97c63;
-$bgLight: #25403F;
-$bgDark: #101920;
-$text: #f6edb6;
+/* $primary: #4B5CA3; */
+/* $secondary: #20362A; */
+/* $accent: #e97c63; */
+/* $bgLight: #25403F; */
+/* $bgDark: #101920; */
+/* $text: #f6edb6; */
+
+// Gruvbox-Material variant of RainyDay
+$primary: #458588;
+$secondary: #3C3836;
+$accent: #8EC07C;
+$bgLight: #504945;
+$bgDark: #1D2021;
+$text: #EBDBB2;
 
 @mixin taskbar_style($radius: 0.75em) {
   background-color: $bgDark;
@@ -34,7 +42,7 @@ $text: #f6edb6;
 
 window {
   color: $text;
-  font-size: 24px;
+  font-size: 20px;
   background-color: rgba($bgDark, 0.5);
   border: 2px solid $bgLight;
   border-radius: 1em;
@@ -74,5 +82,3 @@ window {
 #text {
   padding-left: 0.5em;
 }
-
-

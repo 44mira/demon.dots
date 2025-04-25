@@ -5,7 +5,7 @@ return {
   lazy = true,
   cmd = 'Silicon',
   opts = {
-    font = 'FantasqueSansM Nerd Font=20',
+    font = 'JetBrains Mono Nerd Font=20',
     theme = 'Sublime Snazzy',
     background = '#3c3163',
     -- background_image = '/home/tyrael/Pictures/wallpaper.png',

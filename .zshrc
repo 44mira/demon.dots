@@ -50,15 +50,15 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
-}
-
+# function yy() {
+# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+# 	yazi "$@" --cwd-file="$tmp"
+# 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+# 		cd -- "$cwd"
+# 	fi
+# 	rm -f -- "$tmp"
+# }
+alias yy=yazi
 
 # bat as manpager
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -67,12 +67,14 @@ export MANROFFOPT="-c"
 alias nv="nvim"
 alias py="python"
 alias ls="exa"
-alias ll="exa -s type -la"
+alias op="xdg-open"
+alias ll="exa -s type -l"
 alias ff="fastfetch"
 alias lg="lazygit"
+alias ldc="lazydocker"
 
 # erlang and elixir
-. /opt/asdf-vm/asdf.sh
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -83,9 +85,24 @@ eval "$(rbenv init - zsh)"
 
 path+=("${HOME}/.local/share/gem/ruby/3.3.0/bin")
 path+=("${HOME}/.local/bin")
+path+=("${HOME}/go/bin")
+path+=("${HOME}/.cargo/bin")
 export PATH
 
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
-source /usr/share/nvm/init-nvm.sh
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(uv generate-shell-completion zsh)"
+
+[ -f "/home/mira/.ghcup/env" ] && . "/home/mira/.ghcup/env" # ghcup-env
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/mira/.opam/opam-init/init.zsh' ]] || source '/home/mira/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
+

@@ -1,14 +1,12 @@
 @use '../colors' as *;
 
-button.mainmenu-item {
-  &:hover {
-    background-color: $bg-1;
+button.mainmenu-item:hover {
+  background-color: $bg-1;
 
-    box.mainmenu-item__icon {
-      min-width: 82px;
-      background-color: $fg-0;
-      border-radius: 5px;
-    }
+  box.mainmenu-item__icon {
+    min-width: 82px;
+    background-color: $fg-0;
+    border-radius: 5px;
   }
 }
 

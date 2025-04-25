@@ -16,10 +16,10 @@ return {
         neoscroll.ctrl_d { duration = 100 }
       end,
       ['<C-b>'] = function()
-        neoscroll.ctrl_b { duration = 250 }
+        neoscroll.ctrl_b { duration = 100 }
       end,
       ['<C-f>'] = function()
-        neoscroll.ctrl_f { duration = 250 }
+        neoscroll.ctrl_f { duration = 100 }
       end,
       ['<C-y>'] = function()
         neoscroll.scroll(-0.1, { move_cursor = false, duration = 100 })

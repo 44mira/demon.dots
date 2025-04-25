@@ -23,6 +23,10 @@ bind('n', '<leader>j', '<cmd>IBLDisable | set cc=0<CR>', { desc = 'Disable Inden
 -- Additional normal bind shortcut for ergonomics
 bind('i', 'jk', '<Esc>', { desc = 'Normal mode' })
 
+-- Move lines up and down
+bind('n', ']e', ':m .+1<CR>', { desc = 'Move line below' })
+bind('n', '[e', ':m -2.<CR>', { desc = 'Move line up' })
+
 -- Close a tab
 bind('n', '<leader>bd', '<cmd>bd!<CR>', { desc = '[B]uffer [D]elete' })
 
@@ -31,8 +35,8 @@ bind('n', '<leader>[', '<cmd>bp<CR>', { desc = '[[] Previous Buffer' })
 bind('n', '<leader>]', '<cmd>bn<CR>', { desc = '[]] Next Buffer' })
 
 -- Sane j and k
-bind({ 'n', 'v' }, 'j', 'gj')
-bind({ 'n', 'v' }, 'k', 'gk')
+-- bind({ 'n', 'v' }, 'j', 'gj')
+-- bind({ 'n', 'v' }, 'k', 'gk')
 
 -- Zen mode
 bind('n', '<leader>zen', function()
@@ -108,9 +112,6 @@ local servers = {
       'clangd',
       '--offset-encoding=utf-16',
     },
-  },
-  elixirls = {
-    cmd = { '/home/tyrael/.asdf/installs/elixir/elixir-ls/language_server.sh' },
   },
   pyright = {},
   lua_ls = {
@@ -205,7 +206,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'no'
+vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -456,6 +457,8 @@ require('lazy').setup {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+      -- require('lspconfig').teal_ls.setup {}
+
       require('mason').setup()
 
       local ensure_installed = vim.tbl_keys(servers or {})
@@ -492,7 +495,7 @@ require('lazy').setup {
       formatters = {
         black = {
           command = 'black',
-          args = { '--line-length=79' },
+          prepend_args = { '--line-length', '79' },
         },
       },
       formatters_by_ft = {
