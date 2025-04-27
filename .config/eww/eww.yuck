@@ -1,9 +1,0 @@
-
-(defpoll time :interval "5s"
-  "date +%r")
-
-;; Powermenu
-(include "./powermenu/powermenu.yuck")
-(include "./taskbar/taskbar.yuck")
- 
-  
