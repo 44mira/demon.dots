@@ -1,0 +1,19 @@
+@use 'colors';
+@use 'bar';
+@use 'workspaces';
+
+* {
+  border: none;
+  border-radius: 0px;
+  color: colors.$text;
+  font-family: "Agave Nerd Font Mono";
+  font-size: 18px;
+  min-height: 10px;
+}
+
+label.module,
+#tray {
+  margin: 6px 6px 6px 0px;
+  padding: 5px 10px;
+  background-color: colors.$bgDark;
+}

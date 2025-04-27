@@ -1,0 +1,6 @@
+@use 'colors';
+
+window#waybar {
+  background-color: colors.$bgLight;
+  padding-top: 1em;
+}

@@ -1,0 +1,29 @@
+@use 'colors';
+
+$workspaceColor: colors.$text;
+
+#workspaces {
+  button {
+    background-color: colors.$bgDark;
+    border: 2px solid $workspaceColor;
+    padding: 0 0.75em;
+    min-width: 0.2em;
+    min-height: 0.5em;
+    margin: 6px 0px 6px 6px;
+
+    &.active {
+      transition-property: padding;
+      transition-duration: 0.1s;
+      background-color: $workspaceColor;
+      padding: 0 1.5em;
+    }
+
+    &:hover {
+      background-color: colors.$accent;
+    }
+  }
+}
+
+#window {
+  padding: 0 2em;
+}

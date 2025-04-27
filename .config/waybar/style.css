@@ -1,0 +1,44 @@
+window#waybar {
+  background-color: #504945;
+  padding-top: 1em;
+}
+
+#workspaces button {
+  background-color: #1D2021;
+  border: 2px solid #EBDBB2;
+  padding: 0 0.75em;
+  min-width: 0.2em;
+  min-height: 0.5em;
+  margin: 6px 0px 6px 6px;
+}
+#workspaces button.active {
+  transition-property: padding;
+  transition-duration: 0.1s;
+  background-color: #EBDBB2;
+  padding: 0 1.5em;
+}
+#workspaces button:hover {
+  background-color: #8EC07C;
+}
+
+#window {
+  padding: 0 2em;
+}
+
+* {
+  border: none;
+  border-radius: 0px;
+  color: #EBDBB2;
+  font-family: "Agave Nerd Font Mono";
+  font-size: 18px;
+  min-height: 10px;
+}
+
+label.module,
+#tray {
+  margin: 6px 6px 6px 0px;
+  padding: 5px 10px;
+  background-color: #1D2021;
+}
+
+/*# sourceMappingURL=style.css.map */

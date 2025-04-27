@@ -1,0 +1,106 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "group/sidebar",
+    "tray",
+    "clock",
+    "battery"
+  ],
+  "clock": {
+    "interval": 60,
+    "tooltip": true,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%b %d, %Y}"
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "hyprland/workspaces": {
+    "format": "",
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "group/sidebar": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/sidebar",
+      "backlight",
+      "pulseaudio",
+      "power-profiles-daemon",
+      "memory",
+      "cpu"
+    ]
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+      "headphone": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+  "memory": {
+    "format": "{used}/{total}G ({percentage}%)"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "custom/sidebar": {
+    "format": "",
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 30,
+    "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+    "format-icons": [
+      "<span color='#69ff94'>▁</span>", // green
+      "<span color='#2aa9ff'>▂</span>", // blue
+      "<span color='#f8f8f2'>▃</span>", // white
+      "<span color='#f8f8f2'>▄</span>", // white
+      "<span color='#ffffa5'>▅</span>", // yellow
+      "<span color='#ffffa5'>▆</span>", // yellow
+      "<span color='#ff9977'>▇</span>", // orange
+      "<span color='#dd532e'>█</span>" // red
+    ]
+  }
+}
